@@ -11,7 +11,13 @@ model = joblib.load('random_forest_pipeline1.pkl')
 # Define the home route
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
+
+# Define the index route (for the input form)
+@app.route('/index')
+def index():
+    return render_template('index.html')  # Render the input form page
+
 
 # Define the prediction route
 @app.route('/predict', methods=['POST'])
