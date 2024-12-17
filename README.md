@@ -124,7 +124,4 @@ A synthetic dataset has been generated to simulate tenant information, which inc
 - Enhancing the model with additional features such as tenant behavior analysis and external factors.
 - Implementing a more robust model with cross-validation techniques.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
