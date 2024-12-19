@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            flex: 2;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            color: #007BFF;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.5rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Cost Prediction</h1>
+    <form action="/result_cost_price" method="POST">
+        <div class="form-group">
+            <label for="Project_Type">Project Type:</label>
+            <input type="text" id="Project_Type" name="Project_Type" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Total_Area_SqFt">Total Area (Sq Ft):</label>
+            <input type="number" id="Total_Area_SqFt" name="Total_Area_SqFt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Number_of_Floors">Number of Floors:</label>
+            <input type="number" id="Number_of_Floors" name="Number_of_Floors" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Material_Cost_per_SqFt">Material Cost per Sq Ft:</label>
+            <input type="number" id="Material_Cost_per_SqFt" name="Material_Cost_per_SqFt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Labor_Cost_per_SqFt">Labor Cost per Sq Ft:</label>
+            <input type="number" id="Labor_Cost_per_SqFt" name="Labor_Cost_per_SqFt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Project_Duration_Months">Project Duration (Months):</label>
+            <input type="number" id="Project_Duration_Months" name="Project_Duration_Months" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Location_Type">Location Type:</label>
+            <input type="text" id="Location_Type" name="Location_Type" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Transportation_Cost">Transportation Cost:</label>
+            <input type="number" id="Transportation_Cost" name="Transportation_Cost" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Inflation_Rate">Inflation Rate:
+                <span class="tooltip">?
+                    <span class="tooltiptext">Enter the annual inflation rate as a percentage.</span>
+                </span>
+            </label>
+            <input type="number" id="Inflation_Rate" name="Inflation_Rate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Complexity">Complexity:</label>
+            <input type="text" id="Complexity" name="Complexity" required>
+        </div>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
