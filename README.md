@@ -1,4 +1,4 @@
-# Tenant Default Risk Prediction for Developers
+# Tenant Default Risk Prediction 
 
 ## Project Overview
 
